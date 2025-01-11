@@ -54,7 +54,7 @@ export const PROJECTS = [
     image: project1,
     description:
       "Developed a distributed video processing system using Apache Kafka and MongoDB, integrating ResNet-50 for real-time analytics..",
-    technologies: ["Kafka", "MongoDB", "Resnet50', "Flask"],
+    technologies: ["Kafka", "MongoDB", "Resnet50", "Flask"],
   },
   {
     title: "Fraudulent Merchant Prediction",
