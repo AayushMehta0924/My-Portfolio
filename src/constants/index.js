@@ -24,18 +24,27 @@ export const EXPERIENCES = [
     technologies: ["Python", "SQL", "AWS S3", "Tableau"],
   },
   {
-    year: "2021 - 2022",
-    role: "Full Stack Developer",
-    company: "Facebook",
-    description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-    technologies: ["Python", "Svelte", "Three.js", "Postgres"],
+    year: "April 2022 - July 2022",
+    role: "Data Analyst Intern",
+    company: "Bosky Group, Gandhinagar, India",
+    description: `Analyzed construction project data using Python (Pandas, Matplotlib) and SQL to generate insights that optimized
+resource allocation and reduced costs by 15%.`,
+    technologies: ["Python", "Pandas", "Numpy", "SQL"],
   },
   {
-    year: "2020 - 2021",
-    role: "Software Engineer",
-    company: "Paypal",
-    description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
+    year: "Nov 2021 - Dec 2021",
+    role: "Web Development Intern",
+    company: "Twowaits Technologies Private Limited, Chennai, India",
+    description: `I created a highly secure email authentication system in NodeJS and seamlessly integrated it into a Flutter application for the client.`,
     technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
+  },
+  {
+    year: "Nov 2021 - Nov 2022",
+    role: "Head of Department of Finance",
+    company: "Youth India Foundation, Chennai, India",
+    description: `Managed financial aspects and revenue for events, oversaw intern recruitment, conducted meetings, and produced weekly
+reports. Additionally, organized both state and national-level events.`,
+    technologies: ["Excel", "Python", "EDA"],
   },
 ];
 
