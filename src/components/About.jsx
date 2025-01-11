@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <div className="border-b border-neutral-900 pb-4">
-        <h2 className="my-20 text-center text-4xl">Hello <span className="text-neutral-500">World</span></h2>
+        <h2 className="my-20 text-center text-4xl">About <span className="text-neutral-500">Me</span></h2>
         <div className="flex flex-wrap">
             {/* Image Section */}
             <motion.div
@@ -28,7 +28,7 @@ const About = () => {
                     <code>
                         {"{"}
                         <br />
-                        &nbsp;&nbsp;<span className="text-red-500">"I am a"</span>: {"{"}
+                        &nbsp;&nbsp;<span className="text-red-500">"Origin"</span>: {"{"}
                         <br />
                         &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-yellow-500">"hometown"</span>: <span className="text-green-500">"Ahmedabad, India"</span>,
                         <br />
