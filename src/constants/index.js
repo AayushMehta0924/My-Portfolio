@@ -50,32 +50,32 @@ reports. Additionally, organized both state and national-level events.`,
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
+    title: "StreamLens: Real Time Video Data Processing at Scale",
     image: project1,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "Developed a distributed video processing system using Apache Kafka and MongoDB, integrating ResNet-50 for real-time analytics..",
+    technologies: ["Kafka", "MongoDB", "Resnet50', "Flask"],
   },
   {
-    title: "Task Management App",
+    title: "Fraudulent Merchant Prediction",
     image: project2,
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+      "Designed an XGBoost-based fraud detection model with a robust data pipeline to address class imbalance and optimize performance.",
+    technologies: ["Scikit-learn", "Pandas", "Matplotlib", "XGBoost"],
   },
   {
-    title: "Portfolio Website",
+    title: "Navagraha Iconography Classification Engine",
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
+      "Built a ResNet50-based model achieving 93.75% accuracy in classifying Navagraha god sculptures.",
+    technologies: ["Resnet50", "Tensorflow/Keras", "Numpy", "Matplotlib"],
   },
   {
-    title: "Blogging Platform",
+    title: "Movie Hub",
     image: project4,
     description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+      "Developed a MERN-based Movie Hub app with personalized watchlists, secure JWT authentication, and integrated OMDB API for detailed movie data retrieval.",
+    technologies: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
   },
 ];
 
