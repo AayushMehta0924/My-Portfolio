@@ -10,18 +10,18 @@ export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer w
 
 export const EXPERIENCES = [
   {
-    year: "2023 - Present",
+    year: "May 2024 - Aug 2024",
     role: "Cloud Engineer Intern",
     company: "NETS, Dallas, TX",
     description: `Engineered automated ETL pipelines using Apache Airflow and optimized data workflows with BigQuery. Designed and deployed a Dialogflow chatbot and contributed to predictive models using Vertex AI, supporting advanced analytics and decision-making.`,
     technologies: ["Vertex AI", "Dialogflow", "BigQuery", "Apache Airflow"],
   },
   {
-    year: "2022 - 2023",
-    role: "Frontend Developer",
-    company: "Adobe",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
+    year: "Dec 2022 - April 2023",
+    role: "Data Engineer Intern",
+    company: "Nividata Consultancy, Ahmedabad, India",
+    description: `Analyzed and visualized large datasets using Python, SQL, and Tableau to uncover operational trends. Designed scalable ETL pipelines and developed automation scripts to streamline data processing workflows.`,
+    technologies: ["Python", "SQL", "AWS S3", "Tableau"],
   },
   {
     year: "2021 - 2022",
