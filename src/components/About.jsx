@@ -24,8 +24,42 @@ const About = () => {
                 className="w-full lg:w-1/2"
             >
                 <div className="flex justify-center lg:justify-start">
-                    <pre className="my-2 max-w-xl py-6 bg-neutral-100 p-4 rounded-md shadow-lg">
-                        {ABOUT_TEXT}
+                    <pre className="my-2 max-w-xl py-6 bg-transparent p-4 rounded-md shadow-lg">
+                        <code>
+                            {"{"}
+                            <br />
+                            <span className="text-red-500">"I am a"</span>: <span className="text-green-500">"Passionate full stack developer with 5+ years of experience"</span>,
+                            <br />
+                            <span className="text-yellow-500">"Currently"</span>: <span className="text-green-500">"Exploring cutting-edge technologies and open to new opportunities"</span>,
+                            <br />
+                            <span className="text-red-500">"Previously at"</span>: [
+                            <br />
+                            &nbsp;&nbsp;<span className="text-green-500">"Nividata Consultancy"</span>,
+                            <br />
+                            &nbsp;&nbsp;<span className="text-green-500">"Bosky Group"</span>,
+                            <br />
+                            &nbsp;&nbsp;<span className="text-green-500">"Twowaits Technologies"</span>
+                            <br />
+                            ],
+                            <br />
+                            <span className="text-yellow-500">"Studied at"</span>: <span className="text-green-500">"University of Texas at Dallas"</span>,
+                            <br />
+                            <span className="text-red-500">"I enjoy"</span>: [
+                            <br />
+                            &nbsp;&nbsp;<span className="text-green-500">"Exploring AI/ML advancements"</span>,
+                            <br />
+                            &nbsp;&nbsp;<span className="text-green-500">"Contributing to open-source projects"</span>,
+                            <br />
+                            &nbsp;&nbsp;<span className="text-green-500">"Playing basketball"</span>,
+                            <br />
+                            &nbsp;&nbsp;<span className="text-green-500">"Learning new technologies"</span>
+                            <br />
+                            ],
+                            <br />
+                            <span className="text-yellow-500">"Contact me at"</span>: <span className="text-green-500">"aayushmehta0924@gmail.com"</span>
+                            <br />
+                            {"}"}
+                        </code>
                     </pre>
                 </div>
                 {/* <div className="flex justify-center lg:justify-start">
