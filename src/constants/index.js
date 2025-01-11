@@ -11,10 +11,10 @@ export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer w
 export const EXPERIENCES = [
   {
     year: "2023 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Google Inc.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
+    role: "Cloud Engineer Intern",
+    company: "NETS, Dallas, TX",
+    description: `Engineered automated ETL pipelines using Apache Airflow and optimized data workflows with BigQuery. Designed and deployed a Dialogflow chatbot and contributed to predictive models using Vertex AI, supporting advanced analytics and decision-making.`,
+    technologies: ["Vertex AI", "Dialogflow", "BigQuery", "Apache Airflow"],
   },
   {
     year: "2022 - 2023",
