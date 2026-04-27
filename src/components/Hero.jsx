@@ -1,63 +1,109 @@
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/aayushProfilePic.png";
-import { motion } from "framer-motion";
+import ParticleField from "./ParticleField";
+
+const ROLES = [
+  "Cloud Engineer",
+  "Data Engineer",
+  "AI Engineer",
+  "Analytics Lead",
+];
 
 const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
+  hidden: { x: -60, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: delay},
+    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
   },
 });
 
 const Hero = () => {
-  return ( 
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
-      <div className="flex flex-wrap">
+  const [roleIndex, setRoleIndex] = useState(0);
+  const { scrollY } = useScroll();
+  const yParallax = useTransform(scrollY, [0, 600], [0, 80]);
+  const opacityParallax = useTransform(scrollY, [0, 400], [1, 0.2]);
+
+  useEffect(() => {
+    const id = setInterval(() => setRoleIndex((i) => (i + 1) % ROLES.length), 2600);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <section id="top" className="relative border-b border-neutral-900 pb-4 lg:mb-35">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <ParticleField />
+      </div>
+      <motion.div style={{ y: yParallax, opacity: opacityParallax }} className="flex flex-wrap pt-24">
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start">
-            <motion.h1 
+            <motion.h1
               variants={container(0)}
               initial="hidden"
               animate="visible"
-              className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8x1"
+              className="bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text pb-8 text-6xl font-thin tracking-tight text-transparent lg:mt-16 lg:text-8xl"
             >
-                Aayush Mehta
+              Aayush Mehta
             </motion.h1>
-            <motion.span 
-            variants={container(0.5)}
-            initial="hidden"
-            animate="visible"
-            className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
+
+            <motion.div
+              variants={container(0.4)}
+              initial="hidden"
+              animate="visible"
+              className="flex h-12 items-center text-3xl tracking-tight"
             >
-              Cloud Engineer/Data Analyst
-            </motion.span>
-            <motion.p 
-            variants={container(1)}
-            initial="hidden"
-            animate="visible"
-            className="my-2 max-w-xl py-6 font-light tracking-tighter"
+              <span
+                className="animate-shimmer bg-gradient-to-r from-pink-300 via-purple-400 to-cyan-300 bg-[length:200%_auto] bg-clip-text text-transparent"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={ROLES[roleIndex]}
+                    initial={{ y: 14, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -14, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-block"
+                  >
+                    {ROLES[roleIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+              <span className="ml-1 inline-block h-7 w-[2px] animate-blink bg-cyan-300/80" aria-hidden="true" />
+            </motion.div>
+
+            <motion.p
+              variants={container(0.8)}
+              initial="hidden"
+              animate="visible"
+              className="my-2 max-w-xl py-6 font-light italic tracking-tighter text-neutral-300"
             >
               {HERO_CONTENT}
             </motion.p>
           </div>
         </div>
+
         <div className="w-full lg:w-1/2 lg:p-8">
-          <div className="flex justify-center">
-            <motion.img 
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              src={profilePic} 
-              alt="Scott Lewis" 
-              className="rounded-2xl"
+          <motion.div
+            initial={{ x: 100, opacity: 0, scale: 0.92 }}
+            animate={{ x: 0, opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative flex justify-center"
+          >
+            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-pink-400/40 via-purple-500/30 to-cyan-400/40 opacity-60 blur-2xl" />
+            <motion.img
+              whileHover={{ scale: 1.03, rotate: -1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              src={profilePic}
+              alt="Aayush Mehta"
+              className="relative rounded-2xl shadow-2xl ring-1 ring-white/10"
             />
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </div>
-  )
-}
+      </motion.div>
+    </section>
+  );
+};
 
 export default Hero;

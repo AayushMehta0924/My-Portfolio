@@ -6,14 +6,64 @@ import project4 from "../assets/projects/project-4.jpg";
 
 export const HERO_CONTENT = '"Hardware eventually fails. Software eventually works"'
 
-export const ABOUT_TEXT = `{
-  "I am a": {
+export const ABOUT_DATA = {
+  "Origin": {
     "hometown": "Ahmedabad, India",
-    "current_base": "Dallas, Texas",
-    "languages": ["English", "Gujarati", "Hindi"]
+    "current_base": "Frisco, Texas",
+    "languages": ["English", "Hindi", "Gujarati"],
   },
-  "Currently": "Exploring cutting-edge technologies"
-}`;
+  "Currently": "Building data + AI systems on Google Cloud",
+  "Years of Experience": "4+",
+  "Focus Areas": [
+    "Cloud Engineering",
+    "Data Engineering",
+    "AI / Agentic Systems",
+    "Advanced Analytics",
+  ],
+  "Education": [
+    {
+      "degree": "M.S. Computer Science",
+      "school": "Arizona State University",
+      "gpa": "3.71 / 4.0",
+      "honor": "NAMU Scholarship",
+    },
+    {
+      "degree": "B.Tech Computer Science Engineering",
+      "school": "S.R.M. University, Chennai",
+      "cgpa": "9.38 / 10",
+    },
+  ],
+  "Tools I Reach For": [
+    "BigQuery",
+    "Apache Airflow",
+    "dbt",
+    "Vertex AI",
+    "Google ADK",
+    "Python",
+  ],
+  "Currently Learning": [
+    "Multi-agent orchestration patterns",
+    "Streaming lakehouse architectures",
+    "LLM evals & guardrails",
+  ],
+  "Publication": {
+    "title": "DeSculpt: Indian Temple Sculpture Iconography",
+    "summary": "Deep-learning framework for 9-class classification of Navagraha sculptures, 91% accuracy",
+    "stack": ["ResNet50", "VGG16", "MobileNet", "Transfer Learning"],
+  },
+  "Hobbies": [
+    "Football (the real one)",
+    "Piano",
+    "Travel",
+    "Tinkering with side-projects",
+  ],
+  "Fun Facts": [
+    "Ex Head of Finance at Youth India Foundation",
+    "Trilingual",
+    "Coffee > Tea, but barely",
+  ],
+  "Motto": "Hardware eventually fails. Software eventually works.",
+};
 
 export const EXPERIENCES = [
   {
