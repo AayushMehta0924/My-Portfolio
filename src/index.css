@@ -40,6 +40,13 @@ html.dark {
   background: rgba(120, 119, 198, 0.6);
 }
 
+@media (pointer: fine) {
+  html.custom-cursor-on,
+  html.custom-cursor-on * {
+    cursor: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;

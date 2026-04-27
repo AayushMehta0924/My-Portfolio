@@ -1,7 +1,37 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { FaPlane } from "react-icons/fa";
 import { EXPERIENCES } from "../constants";
 
+const MilestoneDot = ({ index, total, scrollYProgress }) => {
+  const threshold = (index + 0.5) / total;
+  const scale = useTransform(scrollYProgress, [threshold - 0.05, threshold], [1, 1.6]);
+  const opacity = useTransform(scrollYProgress, [threshold - 0.05, threshold], [0.5, 1]);
+  const glow = useTransform(
+    scrollYProgress,
+    [threshold - 0.05, threshold],
+    ["0 0 0px rgba(236,72,153,0)", "0 0 14px rgba(236,72,153,0.7)"]
+  );
+
+  return (
+    <motion.span
+      style={{ scale, opacity, boxShadow: glow }}
+      className="block h-3 w-3 rounded-full bg-gradient-to-br from-pink-400 to-cyan-400 ring-4 ring-neutral-950"
+    />
+  );
+};
+
 const Experience = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 75%", "end 25%"],
+  });
+  const planeY = useSpring(scrollYProgress, { stiffness: 90, damping: 22, mass: 0.4 });
+  const planeTop = useTransform(planeY, [0, 1], ["0%", "100%"]);
+  const fillHeight = useTransform(planeY, [0, 1], ["0%", "100%"]);
+  const planeWobble = useTransform(planeY, [0, 0.5, 1], [85, 95, 85]);
+
   return (
     <section id="experience" className="border-b border-neutral-900 pb-12 pt-16 scroll-mt-24">
       <motion.h2
@@ -14,8 +44,22 @@ const Experience = () => {
         Experience
       </motion.h2>
 
-      <div className="relative mx-auto max-w-5xl">
-        <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-pink-400/30 via-purple-500/30 to-cyan-400/30 md:left-1/2" />
+      <div ref={ref} className="relative mx-auto max-w-5xl">
+        <div className="absolute left-4 top-0 bottom-0 w-px bg-neutral-800/80 md:left-1/2" />
+        <motion.div
+          style={{ height: fillHeight }}
+          className="absolute left-4 top-0 w-px bg-gradient-to-b from-pink-400 via-purple-500 to-cyan-400 md:left-1/2"
+        />
+
+        <motion.div
+          style={{ top: planeTop, rotate: planeWobble }}
+          className="absolute left-4 z-30 -translate-x-1/2 -translate-y-1/2 md:left-1/2"
+          aria-hidden
+        >
+          <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-pink-400 to-cyan-400 text-neutral-950 ring-4 ring-neutral-950 shadow-[0_0_30px_rgba(236,72,153,0.45)]">
+            <FaPlane className="text-base" />
+          </span>
+        </motion.div>
 
         <ol className="space-y-10">
           {EXPERIENCES.map((exp, index) => {
@@ -23,7 +67,11 @@ const Experience = () => {
             return (
               <li key={index} className="relative md:grid md:grid-cols-2 md:gap-10">
                 <span className="absolute left-4 top-2 z-10 -translate-x-1/2 md:left-1/2">
-                  <span className="block h-3 w-3 rounded-full bg-gradient-to-br from-pink-400 to-cyan-400 ring-4 ring-neutral-950" />
+                  <MilestoneDot
+                    index={index}
+                    total={EXPERIENCES.length}
+                    scrollYProgress={scrollYProgress}
+                  />
                 </span>
 
                 <motion.div
