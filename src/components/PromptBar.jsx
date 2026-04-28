@@ -8,6 +8,7 @@ const PROMPT = "aayush@portfolio:~$";
 const PromptBar = () => {
   const [heroVisible, setHeroVisible] = useState(true);
   const [expanded, setExpanded] = useState(false);
+  const [forcedOpen, setForcedOpen] = useState(false);
   const [hintIdx, setHintIdx] = useState(0);
   const wrapRef = useRef(null);
 
@@ -24,36 +25,42 @@ const PromptBar = () => {
     return () => observer.disconnect();
   }, []);
 
-  // auto-collapse if user scrolls out of Hero while expanded
+  // auto-collapse if user scrolls out of Hero while expanded (but not when force-opened from hamburger)
   useEffect(() => {
-    if (!heroVisible && expanded) setExpanded(false);
-  }, [heroVisible, expanded]);
+    if (!heroVisible && expanded && !forcedOpen) setExpanded(false);
+  }, [heroVisible, expanded, forcedOpen]);
 
-  // listen for hamburger / global "open" events
+  // listen for hamburger / global "open" events — force-open regardless of scroll position
   useEffect(() => {
-    const onOpen = () => setExpanded(true);
+    const onOpen = () => setForcedOpen(true);
     window.addEventListener("open-prompt-bar", onOpen);
     return () => window.removeEventListener("open-prompt-bar", onOpen);
   }, []);
 
+  const handleClose = () => {
+    setExpanded(false);
+    setForcedOpen(false);
+  };
+
   // click-outside to collapse
   useEffect(() => {
-    if (!expanded) return;
+    if (!expanded && !forcedOpen) return;
     const onDocClick = (e) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target)) setExpanded(false);
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) handleClose();
     };
     document.addEventListener("mousedown", onDocClick);
     return () => document.removeEventListener("mousedown", onDocClick);
-  }, [expanded]);
+  }, [expanded, forcedOpen]);
 
   // rotate the placeholder hint while collapsed
   useEffect(() => {
-    if (expanded) return;
+    if (expanded || forcedOpen) return;
     const id = setInterval(() => setHintIdx((i) => (i + 1) % HINTS.length), 2200);
     return () => clearInterval(id);
-  }, [expanded]);
+  }, [expanded, forcedOpen]);
 
-  const visible = heroVisible || expanded;
+  const isOpen = expanded || forcedOpen;
+  const visible = heroVisible || isOpen;
 
   return (
     <AnimatePresence>
@@ -67,7 +74,7 @@ const PromptBar = () => {
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-x-0 top-[68px] z-30 mx-auto w-full max-w-3xl px-4"
         >
-          {!expanded ? (
+          {!isOpen ? (
             <button
               type="button"
               onClick={() => setExpanded(true)}
@@ -94,7 +101,7 @@ const PromptBar = () => {
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
               style={{ transformOrigin: "top center" }}
             >
-              <Terminal onClose={() => setExpanded(false)} />
+              <Terminal onClose={handleClose} />
             </motion.div>
           )}
         </motion.div>

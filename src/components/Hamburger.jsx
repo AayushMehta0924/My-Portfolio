@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FiMenu, FiX, FiSun, FiMoon, FiVolume2, FiVolumeX, FiDownload, FiTerminal } from "react-icons/fi";
 import { SOCIAL_LINKS } from "../constants";
 import { useTheme } from "../context/ThemeContext";
@@ -59,29 +58,13 @@ const Hamburger = () => {
       action: { href: SOCIAL_LINKS.github, target: "_blank", rel: "noopener noreferrer" },
     },
     {
-      key: "instagram",
-      label: "Instagram",
-      Icon: FaInstagram,
-      ring: "ring-pink-400/40 hover:text-pink-500 dark:hover:text-pink-300",
-      action: { href: SOCIAL_LINKS.instagram, target: "_blank", rel: "noopener noreferrer" },
-    },
-    {
-      key: "twitter",
-      label: "X / Twitter",
-      Icon: FaSquareXTwitter,
-      ring: "ring-purple-400/40 hover:text-purple-500 dark:hover:text-purple-300",
-      action: { href: SOCIAL_LINKS.twitter, target: "_blank", rel: "noopener noreferrer" },
-    },
-    {
       key: "terminal",
       label: "Terminal",
       Icon: FiTerminal,
       ring: "ring-emerald-400/40 hover:text-emerald-600 dark:hover:text-emerald-300",
       action: {
         onClick: () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          // wait for scroll-up then open the prompt bar
-          setTimeout(openTerminalEvent, 350);
+          openTerminalEvent();
           setOpen(false);
         },
       },
@@ -100,7 +83,7 @@ const Hamburger = () => {
       key: "sound",
       label: soundOn ? "Mute sounds" : "Enable sounds",
       Icon: soundOn ? FiVolume2 : FiVolumeX,
-      ring: "ring-cyan-400/40 hover:text-cyan-600 dark:hover:text-cyan-300",
+      ring: "ring-purple-400/40 hover:text-purple-600 dark:hover:text-purple-300",
       action: {
         onClick: () => toggleSound(),
       },
