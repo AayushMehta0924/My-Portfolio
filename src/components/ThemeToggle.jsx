@@ -10,7 +10,7 @@ const ThemeToggle = () => {
     <button
       onClick={toggle}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-full border border-neutral-700/60 bg-neutral-900/40 text-lg text-neutral-200 backdrop-blur transition-colors hover:border-cyan-400/60 hover:text-cyan-300 dark:bg-neutral-900/40"
+      className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-full border border-neutral-300 bg-white/40 text-lg text-neutral-800 backdrop-blur transition-colors hover:border-cyan-500/60 hover:text-cyan-600 dark:border-neutral-700/60 dark:bg-neutral-900/40 dark:text-neutral-200 dark:hover:border-cyan-400/60 dark:hover:text-cyan-300"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

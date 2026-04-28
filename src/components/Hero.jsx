@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/aayushProfilePic.png";
 import ParticleField from "./ParticleField";
+import MagneticButton from "./MagneticButton";
 
 const ROLES = [
   "Cloud Engineer",
@@ -22,9 +23,11 @@ const container = (delay) => ({
 
 const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
+  const sectionRef = useRef(null);
   const { scrollY } = useScroll();
   const yParallax = useTransform(scrollY, [0, 600], [0, 80]);
-  const opacityParallax = useTransform(scrollY, [0, 400], [1, 0.2]);
+  const opacityParallax = useTransform(scrollY, [0, 500], [1, 0.15]);
+  const titleScale = useTransform(scrollY, [0, 400], [1, 0.7]);
 
   useEffect(() => {
     const id = setInterval(() => setRoleIndex((i) => (i + 1) % ROLES.length), 2600);
@@ -32,7 +35,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="top" className="relative border-b border-neutral-900 pb-4 lg:mb-35">
+    <section ref={sectionRef} id="top" className="relative pb-4 lg:mb-35">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <ParticleField />
       </div>
@@ -43,7 +46,8 @@ const Hero = () => {
               variants={container(0)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text pb-8 text-6xl font-thin tracking-tight text-transparent lg:mt-16 lg:text-8xl"
+              style={{ scale: titleScale, transformOrigin: "left center" }}
+              className="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-500 bg-clip-text pb-8 text-6xl font-thin tracking-tight text-transparent dark:from-white dark:via-neutral-200 dark:to-neutral-400 lg:mt-16 lg:text-8xl"
             >
               Aayush Mehta
             </motion.h1>
@@ -55,7 +59,7 @@ const Hero = () => {
               className="flex h-12 items-center text-3xl tracking-tight"
             >
               <span
-                className="animate-shimmer bg-gradient-to-r from-pink-300 via-purple-400 to-cyan-300 bg-[length:200%_auto] bg-clip-text text-transparent"
+                className="animate-shimmer bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-500 bg-[length:200%_auto] bg-clip-text text-transparent dark:from-pink-300 dark:via-purple-400 dark:to-cyan-300"
               >
                 <AnimatePresence mode="wait">
                   <motion.span
@@ -70,17 +74,39 @@ const Hero = () => {
                   </motion.span>
                 </AnimatePresence>
               </span>
-              <span className="ml-1 inline-block h-7 w-[2px] animate-blink bg-cyan-300/80" aria-hidden="true" />
+              <span className="ml-1 inline-block h-7 w-[2px] animate-blink bg-cyan-500/80 dark:bg-cyan-300/80" aria-hidden="true" />
             </motion.div>
 
             <motion.p
               variants={container(0.8)}
               initial="hidden"
               animate="visible"
-              className="my-2 max-w-xl py-6 font-light italic tracking-tighter text-neutral-300"
+              className="my-2 max-w-xl py-6 font-light italic tracking-tighter text-neutral-700 dark:text-neutral-300"
             >
               {HERO_CONTENT}
             </motion.p>
+
+            <motion.div
+              variants={container(1.1)}
+              initial="hidden"
+              animate="visible"
+              className="flex items-center gap-3"
+            >
+              <MagneticButton
+                as="a"
+                href="#contact"
+                className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 px-6 py-3 text-sm font-medium text-white shadow-lg transition-shadow duration-300 hover:shadow-[0_12px_40px_-10px_rgba(168,85,247,0.6)]"
+              >
+                Get in touch
+              </MagneticButton>
+              <MagneticButton
+                as="a"
+                href="#projects"
+                className="rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-800 transition-colors hover:border-cyan-500/60 hover:text-cyan-700 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-cyan-400/60 dark:hover:text-cyan-300"
+              >
+                See projects
+              </MagneticButton>
+            </motion.div>
           </div>
         </div>
 
@@ -97,7 +123,7 @@ const Hero = () => {
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
               src={profilePic}
               alt="Aayush Mehta"
-              className="relative rounded-2xl shadow-2xl ring-1 ring-white/10"
+              className="relative rounded-2xl shadow-2xl ring-1 ring-black/10 dark:ring-white/10"
             />
           </motion.div>
         </div>
