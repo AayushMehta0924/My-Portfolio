@@ -16,6 +16,7 @@ import {
     SiNeo4J,
     SiTensorflow,
     SiPytorch,
+    SiKeras,
     SiPandas,
     SiNumpy,
     SiScikitlearn,
@@ -24,6 +25,10 @@ import {
     SiTableau,
     SiGit,
     SiGitlab,
+    SiReact,
+    SiNodedotjs,
+    SiFlask,
+    SiSap,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import SectionWatermark from "./SectionWatermark";
@@ -59,12 +64,17 @@ const TECHS = [
     { Icon: SiRedis, color: "text-red-600 dark:text-red-500", duration: 3.4, label: "Redis", glow: "shadow-red-500/40" },
     { Icon: SiNeo4J, color: "text-cyan-600 dark:text-cyan-400", duration: 3.8, label: "Neo4j", glow: "shadow-cyan-400/40" },
     { Icon: SiTensorflow, color: "text-orange-600 dark:text-orange-500", duration: 3.0, label: "TensorFlow", glow: "shadow-orange-500/40" },
+    { Icon: SiKeras, color: "text-red-600 dark:text-red-500", duration: 3.4, label: "Keras", glow: "shadow-red-500/40" },
     { Icon: SiPytorch, color: "text-orange-500 dark:text-orange-400", duration: 2.5, label: "PyTorch", glow: "shadow-orange-400/40" },
     { Icon: SiScikitlearn, color: "text-blue-500 dark:text-blue-400", duration: 4.4, label: "scikit-learn", glow: "shadow-blue-400/40" },
     { Icon: SiPandas, color: "text-purple-600 dark:text-purple-400", duration: 4.0, label: "Pandas", glow: "shadow-purple-400/40" },
     { Icon: SiNumpy, color: "text-sky-600 dark:text-sky-400", duration: 3.2, label: "NumPy", glow: "shadow-sky-400/40" },
     { Icon: SiLooker, color: "text-fuchsia-600 dark:text-fuchsia-400", duration: 3.6, label: "Looker", glow: "shadow-fuchsia-400/40" },
     { Icon: SiTableau, color: "text-blue-500 dark:text-blue-400", duration: 2.8, label: "Tableau", glow: "shadow-blue-400/40" },
+    { Icon: SiReact, color: "text-cyan-500 dark:text-cyan-400", duration: 2.6, label: "React", glow: "shadow-cyan-400/40" },
+    { Icon: SiNodedotjs, color: "text-green-700 dark:text-green-500", duration: 3.4, label: "Node.js", glow: "shadow-green-500/40" },
+    { Icon: SiFlask, color: "text-neutral-800 dark:text-neutral-200", duration: 3.8, label: "Flask", glow: "shadow-neutral-300/40" },
+    { Icon: SiSap, color: "text-blue-600 dark:text-blue-400", duration: 4.2, label: "SAP", glow: "shadow-blue-500/40" },
     { Icon: SiGit, color: "text-orange-700 dark:text-orange-600", duration: 3.0, label: "Git", glow: "shadow-orange-600/40" },
     { Icon: SiGitlab, color: "text-orange-600 dark:text-orange-500", duration: 4.0, label: "GitLab", glow: "shadow-orange-500/40" },
 ];

@@ -25,8 +25,8 @@ const COMMANDS = {
     "address 2337 Gelding Ln, Frisco, TX 75036",
   ],
   resume: () => {
-    if (typeof window !== "undefined") window.open("/resume.pdf", "_blank");
-    return ["opening resume.pdf …"];
+    if (typeof window !== "undefined") window.open("/Aayush_Resume.pdf", "_blank");
+    return ["opening Aayush_Resume.pdf …"];
   },
   social: () => [
     "linkedin  /in/aayushmehta0924",

@@ -24,7 +24,7 @@ export const ABOUT_DATA = {
     {
       "degree": "M.S. Computer Science",
       "school": "Arizona State University",
-      "gpa": "3.71 / 4.0",
+      "gpa": "3.73 / 4",
       "honor": "NAMU Scholarship",
     },
     {
@@ -40,6 +40,13 @@ export const ABOUT_DATA = {
     "Vertex AI",
     "Google ADK",
     "Python",
+    "SAP BusinessObjects",
+  ],
+  "Also Comfortable With": [
+    "Flask · Node.js · React.js (MERN)",
+    "ERwin · Star/Snowflake schemas",
+    "Power BI · Tableau · Looker",
+    "Agile (Scrum) · SDLC",
   ],
   "Currently Learning": [
     "Multi-agent orchestration patterns",
@@ -68,24 +75,17 @@ export const ABOUT_DATA = {
 export const EXPERIENCES = [
   {
     year: "Jan 2026 - Present",
-    role: "Data Engineer",
-    company: "ITDataBuild (Client: Bayer), Flower Mound, TX",
-    description: `Engineered end-to-end migration pipelines porting SAP HANA calculation views to BigQuery via Python-based Airflow DAGs with built-in row-count, schema, and null-distribution validation. Re-architected the legacy migration framework to cut Cloud Composer runtime and BigQuery slot usage, and converted 6 manual Python jobs into scheduled DAGs with retry, alerting, and SLA monitoring.`,
-    technologies: ["Python", "Airflow", "BigQuery", "GCP", "SAP HANA"],
-  },
-  {
-    year: "Jan 2025 - Present",
     role: "Data Architect",
     company: "ITDataBuild, Flower Mound, TX",
-    description: `Designed a GCP-based Customer 360 model integrating SAP, ServiceNow, and Salesforce, and standardized 15+ KPIs queryable across finance, sales, and operations. Built Ask-AES, a Vertex AI + Google ADK multi-agent chatbot over BigQuery with inline chart rendering and Microsoft Teams integration, plus a natural-language Text-to-SQL bot enabling non-technical teams to query KPIs without SQL.`,
-    technologies: ["Vertex AI", "Google ADK", "BigQuery", "Looker", "Python"],
+    description: `Engineered end-to-end SAP HANA → BigQuery migration pipelines via Python Airflow DAGs with row-count, schema-parity, and null-distribution validation. Re-architected the legacy migration framework to cut Cloud Composer runtime and BigQuery slot usage, and converted 6 manual Python jobs into scheduled DAGs with retry, alerting, and SLA monitoring. Also administering SAP BusinessObjects: report bursting, cross-environment promotion management (DEV/QA/PROD), and platform patching/maintenance.`,
+    technologies: ["Python", "Airflow", "BigQuery", "SAP HANA", "SAP BO", "GCP"],
   },
   {
     year: "May 2025 - Dec 2025",
     role: "Cloud Data/AI Engineer",
     company: "Sabre, Dallas, TX",
-    description: `Maintained a suite of modular Apache Airflow DAGs for incremental Salesforce-to-BigQuery batch processing, and migrated Airflow SQL to dbt with layered models, freshness tests, and Slim CI on PRs. Built reusable DAG templates for ad-hoc migrations and authored Python scripts for schema validation, duplicate checks, and transformation consistency.`,
-    technologies: ["Airflow", "dbt", "BigQuery", "Python", "Salesforce"],
+    description: `Built a GCP Customer 360 (SAP + ServiceNow + Salesforce) and Ask-AES, a Vertex AI + Google ADK multi-agent chatbot over BigQuery with inline chart rendering and Microsoft Teams integration. Standardized 15+ KPIs, shipped Looker dashboards, migrated Airflow SQL to dbt with Slim CI, and conducted two internal seminars on Looker Studio and Conversational Analytics.`,
+    technologies: ["Vertex AI", "Google ADK", "BigQuery", "dbt", "Airflow", "Looker"],
   },
   {
     year: "Sept 2022 - June 2023",
@@ -115,7 +115,7 @@ export const EDUCATION = [
     year: "2023 - 2025",
     degree: "Master of Science in Computer Science",
     school: "Arizona State University, USA",
-    details: "CGPA: 3.71/4 — Awarded NAMU Scholarship",
+    details: "CGPA: 3.73/4 — Awarded NAMU Scholarship",
   },
   {
     year: "2018 - 2022",

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiDownload } from "react-icons/fi";
 import { SOCIAL_LINKS } from "../constants";
 import ThemeToggle from "./ThemeToggle";
 import SoundToggle from "./SoundToggle";
@@ -56,9 +56,20 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-8 py-4">
-        <a href="#top" className="flex flex-shrink-0 items-center gap-2 group">
-          <Logo className="h-10 w-10 transition-transform duration-500 group-hover:rotate-[360deg]" />
-        </a>
+        <div className="group relative flex flex-shrink-0 items-center">
+          <a href="#top" aria-label="Home" className="relative z-10 block">
+            <Logo className="h-10 w-10 transition-transform duration-500 group-hover:rotate-[360deg]" />
+          </a>
+          <a
+            href="/Aayush_Resume.pdf"
+            download="Aayush_Mehta_Resume.pdf"
+            aria-label="Download résumé (PDF)"
+            className="pointer-events-none absolute left-12 top-1/2 inline-flex -translate-x-2 -translate-y-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-neutral-300 bg-white/85 px-3 py-1.5 text-xs font-medium text-neutral-700 opacity-0 shadow-md backdrop-blur transition-all duration-300 ease-out-expo hover:border-cyan-500/60 hover:text-cyan-700 group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100 dark:border-neutral-700/70 dark:bg-neutral-900/85 dark:text-neutral-200 dark:hover:border-cyan-400/60 dark:hover:text-cyan-300"
+          >
+            <FiDownload className="text-sm" />
+            Resume
+          </a>
+        </div>
 
         <ul className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => {
