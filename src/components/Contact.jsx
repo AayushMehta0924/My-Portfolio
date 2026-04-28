@@ -3,7 +3,6 @@ import { FiMapPin, FiPhone, FiMail, FiArrowUpRight } from "react-icons/fi";
 import { CONTACT } from "../constants";
 import SectionWatermark from "./SectionWatermark";
 import MagneticButton from "./MagneticButton";
-import Terminal from "./Terminal";
 
 const item = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -65,7 +64,6 @@ const Contact = () => {
         </MagneticButton>
       </motion.div>
 
-      <Terminal />
     </section>
   );
 };

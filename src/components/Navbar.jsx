@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX, FiDownload } from "react-icons/fi";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { FiMenu, FiX, FiDownload } from "react-icons/fi";
 import { SOCIAL_LINKS } from "../constants";
-import ThemeToggle from "./ThemeToggle";
-import SoundToggle from "./SoundToggle";
 import Logo from "./Logo";
+import Hamburger from "./Hamburger";
 
 const NAV_LINKS = [
   { id: "about", label: "About" },
@@ -58,7 +57,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-8 py-4">
         <div className="group relative flex flex-shrink-0 items-center">
           <a href="#top" aria-label="Home" className="relative z-10 block">
-            <Logo className="h-10 w-10 transition-transform duration-500 group-hover:rotate-[360deg]" />
+            <Logo className="h-10 w-10 animate-spin-slow group-hover:animate-spin-fast" />
           </a>
           <a
             href="/Aayush_Resume.pdf"
@@ -95,22 +94,9 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-          <div className="hidden items-center gap-3 text-xl text-neutral-700 dark:text-neutral-300 md:flex">
-            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-all duration-300 hover:scale-110 hover:text-cyan-500 dark:hover:text-cyan-400">
-              <FaLinkedin />
-            </a>
-            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transition-all duration-300 hover:scale-110 hover:text-cyan-500 dark:hover:text-cyan-400">
-              <FaGithub />
-            </a>
-            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-all duration-300 hover:scale-110 hover:text-cyan-500 dark:hover:text-cyan-400">
-              <FaInstagram />
-            </a>
-            <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="X / Twitter" className="transition-all duration-300 hover:scale-110 hover:text-cyan-500 dark:hover:text-cyan-400">
-              <FaSquareXTwitter />
-            </a>
+          <div className="hidden md:block">
+            <Hamburger />
           </div>
-          <SoundToggle />
-          <ThemeToggle />
           <button
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Toggle menu"
@@ -147,6 +133,14 @@ const Navbar = () => {
                 <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
                 <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
                 <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><FaSquareXTwitter /></a>
+                <a
+                  href="/Aayush_Resume.pdf"
+                  download="Aayush_Mehta_Resume.pdf"
+                  aria-label="Download résumé"
+                  className="ml-auto inline-flex items-center gap-1 rounded-full border border-neutral-300 px-2.5 py-1 text-xs text-neutral-700 dark:border-neutral-700 dark:text-neutral-200"
+                >
+                  <FiDownload /> Resume
+                </a>
               </li>
             </ul>
           </motion.div>

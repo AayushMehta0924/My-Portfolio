@@ -16,6 +16,7 @@ import SectionDots from "./components/SectionDots";
 import BackToTop from "./components/BackToTop";
 import LoadingSplash from "./components/LoadingSplash";
 import SectionDivider from "./components/SectionDivider";
+import PromptBar from "./components/PromptBar";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <SectionDots />
           <BackToTop />
           <Navbar />
+          <PromptBar />
 
           <main className="container mx-auto px-8 pt-24">
             <Hero />

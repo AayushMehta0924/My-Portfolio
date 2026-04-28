@@ -20,6 +20,8 @@ export default {
       animation: {
         shimmer: 'shimmer 6s ease-in-out infinite',
         blink: 'blink 1s step-end infinite',
+        'spin-slow': 'spin 14s linear infinite',
+        'spin-fast': 'spin 1.6s linear infinite',
       },
       transitionTimingFunction: {
         'out-expo': 'cubic-bezier(0.22, 1, 0.36, 1)',
