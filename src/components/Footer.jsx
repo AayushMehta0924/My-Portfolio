@@ -1,37 +1,71 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
-const BASE_VISITS = 1247;
+const NAMESPACE = "aayushmehta-portfolio";
+const KEY = "visits";
+const CACHE_KEY = "visit-count-cache";
+const SESSION_KEY = "visit-counted-session";
+
+const fetchCount = async (shouldIncrement) => {
+  const path = shouldIncrement ? "hit" : "get";
+  const res = await fetch(`https://abacus.jasoncameron.dev/${path}/${NAMESPACE}/${KEY}`);
+  if (!res.ok) throw new Error("counter unavailable");
+  const data = await res.json();
+  if (typeof data.value !== "number") throw new Error("bad payload");
+  return data.value;
+};
 
 const VisitCounter = () => {
-  const [count, setCount] = useState(BASE_VISITS);
+  const [count, setCount] = useState(() => {
+    if (typeof window === "undefined") return null;
+    const cached = parseInt(window.localStorage.getItem(CACHE_KEY) || "", 10);
+    return Number.isFinite(cached) && cached > 0 ? cached : null;
+  });
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const stored = parseInt(window.localStorage.getItem("visit-count") || "0", 10);
-    const next = (isNaN(stored) ? 0 : stored) + 1;
-    window.localStorage.setItem("visit-count", String(next));
-    setCount(BASE_VISITS + next);
+    const counted = window.sessionStorage.getItem(SESSION_KEY) === "1";
+    let cancelled = false;
+    fetchCount(!counted)
+      .then((n) => {
+        if (cancelled) return;
+        setCount(n);
+        window.localStorage.setItem(CACHE_KEY, String(n));
+        window.sessionStorage.setItem(SESSION_KEY, "1");
+      })
+      .catch(() => {
+        if (!cancelled) setError(true);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  const digits = String(count).padStart(7, "0").split("");
+  const digits = (count == null ? "      0" : String(count).padStart(7, "0")).split("");
 
   return (
     <div className="inline-flex items-center gap-2 text-xs text-neutral-500">
-      <span className="uppercase tracking-widest">visitor</span>
+      <span className="uppercase tracking-widest">visitors</span>
       <div className="flex overflow-hidden rounded-md border border-neutral-300 bg-neutral-900 dark:border-neutral-700">
-        {digits.map((d, i) => (
-          <motion.span
-            key={`${i}-${d}`}
-            initial={{ y: -14, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: i * 0.04, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="grid h-6 w-5 place-items-center border-r border-neutral-700 font-mono text-[13px] font-semibold text-emerald-400 last:border-r-0"
-          >
-            {d}
-          </motion.span>
-        ))}
+        <AnimatePresence initial={false} mode="popLayout">
+          {digits.map((d, i) => (
+            <motion.span
+              key={`${i}-${d}`}
+              initial={{ y: -14, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 14, opacity: 0 }}
+              transition={{ delay: i * 0.025, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="grid h-6 w-5 place-items-center border-r border-neutral-700 font-mono text-[13px] font-semibold text-emerald-400 last:border-r-0"
+            >
+              {d === " " ? "·" : d}
+            </motion.span>
+          ))}
+        </AnimatePresence>
       </div>
+      {error && count == null && (
+        <span className="text-neutral-600" title="Counter service unreachable">offline</span>
+      )}
     </div>
   );
 };
