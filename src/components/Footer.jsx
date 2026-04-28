@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const NAMESPACE = "aayushmehta-portfolio";
 const KEY = "visits";
 const CACHE_KEY = "visit-count-cache";
-const SESSION_KEY = "visit-counted-session";
+const COUNTED_KEY = "visit-counted-browser";
 
 const fetchCount = async (shouldIncrement) => {
   const path = shouldIncrement ? "hit" : "get";
@@ -25,14 +25,14 @@ const VisitCounter = () => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const counted = window.sessionStorage.getItem(SESSION_KEY) === "1";
+    const counted = window.localStorage.getItem(COUNTED_KEY) === "1";
     let cancelled = false;
     fetchCount(!counted)
       .then((n) => {
         if (cancelled) return;
         setCount(n);
         window.localStorage.setItem(CACHE_KEY, String(n));
-        window.sessionStorage.setItem(SESSION_KEY, "1");
+        if (!counted) window.localStorage.setItem(COUNTED_KEY, "1");
       })
       .catch(() => {
         if (!cancelled) setError(true);
