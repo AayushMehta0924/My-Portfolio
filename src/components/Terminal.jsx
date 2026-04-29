@@ -72,6 +72,8 @@ const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
       "  jan 2026 – now    data architect      itdatabuild",
       "  may 2025 – dec 25 cloud data/ai eng   sabre",
       "  sept 2022 – jun 23 cloud data/ai eng   analytics it",
+      "  nov 2021 – nov 22 head of finance      youth india foundation",
+      "  nov 2021 – dec 21 web developer        twowaits",
       "  may 2021 – jun 22 data engineer       nividata",
       "  may 2020 – dec 20 data analyst        bosky buildcon",
     ],

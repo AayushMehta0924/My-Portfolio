@@ -95,6 +95,20 @@ export const EXPERIENCES = [
     technologies: ["Airflow", "BigQuery", "Vertex AI", "Dialogflow", "dbt", "Looker"],
   },
   {
+    year: "Nov 2021 - Nov 2022",
+    role: "Head of Finance",
+    company: "Youth India Foundation, Chennai, India",
+    description: `Managed budgeting, expense tracking, and revenue planning for state and national events, ensuring financial transparency and accountability. Used Excel to analyze event profitability, visualize revenue trends, and prepare weekly financial reports for leadership. Coordinated intern recruitment and onboarding while leading weekly meetings to align teams on tasks and operational goals. Collaborated with event and operations teams, using data insights to optimize resource allocation and reduce overall event costs.`,
+    technologies: ["Excel", "Financial Reporting", "Data Analysis", "Team Leadership"],
+  },
+  {
+    year: "Nov 2021 - Dec 2021",
+    role: "Web Developer",
+    company: "TwoWaits, Chennai, India",
+    description: `Developed a secure email authentication module in Node.js and integrated it with a Flutter client application for seamless user onboarding. Contributed to frontend improvements in the Flutter app — enhancing UI responsiveness, refining input validation, and ensuring smoother user flows during login and signup. Documented API endpoints and authentication workflows for future developer reference, and supported QA testing by identifying bugs, replicating issues, and validating fixes across user flows.`,
+    technologies: ["Node.js", "Flutter", "REST APIs", "Authentication"],
+  },
+  {
     year: "May 2021 - June 2022",
     role: "Data Engineer",
     company: "Nividata Consultancy",
