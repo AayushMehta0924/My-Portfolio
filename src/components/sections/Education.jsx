@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { FaGraduationCap } from "react-icons/fa";
-import { EDUCATION } from "../constants";
-import SectionWatermark from "./SectionWatermark";
+import { EDUCATION } from "../../constants";
+import SectionWatermark from "../ui/SectionWatermark";
 
 const MilestoneDot = ({ index, total, scrollYProgress }) => {
   const threshold = (index + 0.5) / total;

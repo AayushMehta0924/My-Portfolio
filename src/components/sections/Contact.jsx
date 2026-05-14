@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { FiMapPin, FiPhone, FiMail, FiArrowUpRight } from "react-icons/fi";
-import { CONTACT } from "../constants";
-import SectionWatermark from "./SectionWatermark";
-import MagneticButton from "./MagneticButton";
+import { CONTACT } from "../../constants";
+import SectionWatermark from "../ui/SectionWatermark";
+import MagneticButton from "../ui/MagneticButton";
 
 const item = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },

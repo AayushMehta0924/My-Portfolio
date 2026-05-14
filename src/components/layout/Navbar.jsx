@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiDownload } from "react-icons/fi";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { SOCIAL_LINKS } from "../constants";
+import { SOCIAL_LINKS } from "../../constants";
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 

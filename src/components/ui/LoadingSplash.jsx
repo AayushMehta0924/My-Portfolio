@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Logo from "./Logo";
+import Logo from "../layout/Logo";
 
 const LoadingSplash = () => {
   const [done, setDone] = useState(false);

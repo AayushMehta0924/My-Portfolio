@@ -1,22 +1,22 @@
 import { ThemeProvider } from "./context/ThemeContext";
 import { SoundProvider } from "./context/SoundContext";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Technologies from "./components/Technologies";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import ScrollProgress from "./components/ScrollProgress";
-import CursorBackground from "./components/CursorBackground";
-import CustomCursor from "./components/CustomCursor";
-import SectionDots from "./components/SectionDots";
-import BackToTop from "./components/BackToTop";
-import LoadingSplash from "./components/LoadingSplash";
-import SectionDivider from "./components/SectionDivider";
-import PromptBar from "./components/PromptBar";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Technologies from "./components/sections/Technologies";
+import Experience from "./components/sections/Experience";
+import Education from "./components/sections/Education";
+import Projects from "./components/sections/Projects";
+import Contact from "./components/sections/Contact";
+import ScrollProgress from "./components/ui/ScrollProgress";
+import CursorBackground from "./components/ui/CursorBackground";
+import CustomCursor from "./components/ui/CustomCursor";
+import SectionDots from "./components/ui/SectionDots";
+import BackToTop from "./components/ui/BackToTop";
+import LoadingSplash from "./components/ui/LoadingSplash";
+import SectionDivider from "./components/ui/SectionDivider";
+import PromptBar from "./components/ui/PromptBar";
 
 const App = () => {
   return (

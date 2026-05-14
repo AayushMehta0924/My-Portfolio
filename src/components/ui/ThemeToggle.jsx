@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 
 const ThemeToggle = () => {
   const { theme, toggle } = useTheme();

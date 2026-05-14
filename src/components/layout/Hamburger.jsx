@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FiMenu, FiX, FiSun, FiMoon, FiVolume2, FiVolumeX, FiDownload, FiTerminal } from "react-icons/fi";
-import { SOCIAL_LINKS } from "../constants";
-import { useTheme } from "../context/ThemeContext";
-import { useSound } from "../context/SoundContext";
+import { SOCIAL_LINKS } from "../../constants";
+import { useTheme } from "../../context/ThemeContext";
+import { useSound } from "../../context/SoundContext";
 
 const RADIUS = 130;
 const START_ANGLE = 90;   // south (straight down)

@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FiVolume2, FiVolumeX } from "react-icons/fi";
-import { useSound } from "../context/SoundContext";
+import { useSound } from "../../context/SoundContext";
 
 const SoundToggle = () => {
   const { enabled, toggle } = useSound();

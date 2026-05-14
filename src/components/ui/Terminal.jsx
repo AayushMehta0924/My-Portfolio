@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "../context/ThemeContext";
-import { useSound } from "../context/SoundContext";
+import { useTheme } from "../../context/ThemeContext";
+import { useSound } from "../../context/SoundContext";
 
 // Update if wrong — guessed from email handle 0924
 const BIRTH_DATE = "2000-09-24";

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { PROJECTS } from "../constants";
-import SectionWatermark from "./SectionWatermark";
+import { PROJECTS } from "../../constants";
+import SectionWatermark from "../ui/SectionWatermark";
 
 const TiltCard = ({ project, index }) => {
   const ref = useRef(null);

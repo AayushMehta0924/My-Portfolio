@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { HERO_CONTENT } from "../constants";
-import profilePic from "../assets/Aayush_beach.jpg";
-import ParticleField from "./ParticleField";
-import MagneticButton from "./MagneticButton";
+import { HERO_CONTENT } from "../../constants";
+import profilePic from "../../assets/images/profile/Aayush_beach3.jpg";
+import ParticleField from "../ui/ParticleField";
+import MagneticButton from "../ui/MagneticButton";
 
 const ROLES = [
   "Cloud Engineer",

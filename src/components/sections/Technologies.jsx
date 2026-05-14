@@ -31,7 +31,7 @@ import {
     SiSap,
 } from "react-icons/si";
 import { motion } from "framer-motion";
-import SectionWatermark from "./SectionWatermark";
+import SectionWatermark from "../ui/SectionWatermark";
 
 const iconVariants = (duration) => ({
     initial: { y: -8 },

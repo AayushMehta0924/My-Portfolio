@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronRight } from "react-icons/fi";
-import { ABOUT_DATA } from "../constants";
-import SectionWatermark from "./SectionWatermark";
+import { ABOUT_DATA } from "../../constants";
+import SectionWatermark from "../ui/SectionWatermark";
 
 const renderValue = (value, indent = 1) => {
   const pad = "  ".repeat(indent);
