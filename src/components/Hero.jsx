@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { HERO_CONTENT } from "../constants";
-import profilePic from "../assets/aayushProfilePic.png";
+import profilePic from "../assets/Aayush_beach.JPG";
 import ParticleField from "./ParticleField";
 import MagneticButton from "./MagneticButton";
 
