@@ -99,7 +99,7 @@ const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
       "piano     youtube.com/@2symphonians197",
     ],
     resume: () => {
-      if (typeof window !== "undefined") window.open("/Aayush_Resume.pdf", "_blank");
+      if (typeof window !== "undefined") window.open("/resume/Aayush_Resume.pdf", "_blank");
       return ["opening Aayush_Resume.pdf …"];
     },
     piano: () => {

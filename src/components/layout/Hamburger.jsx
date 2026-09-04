@@ -75,7 +75,7 @@ const Hamburger = () => {
       Icon: FiDownload,
       ring: "ring-cyan-400/40 hover:text-cyan-600 dark:hover:text-cyan-300",
       action: {
-        href: "/Aayush_Resume.pdf",
+        href: "/resume/Aayush_Resume.pdf",
         download: "Aayush_Mehta_Resume.pdf",
       },
     },
