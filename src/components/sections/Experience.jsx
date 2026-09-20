@@ -114,20 +114,27 @@ const Experience = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className={`ml-10 rounded-xl border border-neutral-200 bg-white/70 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-[0_8px_30px_rgba(34,211,238,0.18)] dark:border-neutral-800/70 dark:bg-neutral-950/40 dark:hover:border-cyan-400/40 dark:hover:shadow-[0_8px_30px_rgba(34,211,238,0.15)] md:ml-0 ${
-                    left ? "md:col-start-1 md:text-right md:pr-12" : "md:col-start-2 md:pl-12"
+                  className={`ml-10 min-w-0 break-words rounded-xl border border-neutral-200 bg-white/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-[0_8px_30px_rgba(34,211,238,0.18)] dark:border-neutral-800/70 dark:bg-neutral-950/40 dark:hover:border-cyan-400/40 dark:hover:shadow-[0_8px_30px_rgba(34,211,238,0.15)] md:ml-0 ${
+                    left ? "md:col-start-1" : "md:col-start-2"
                   }`}
                 >
                   <p className="mb-1 text-xs uppercase tracking-wider text-cyan-700 dark:text-cyan-300/80">{exp.year}</p>
-                  <h6 className="mb-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+                  <h6 className="mb-3 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
                     {exp.role} <span className="text-sm font-normal text-purple-700 dark:text-purple-200">— {exp.company}</span>
                   </h6>
-                  <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">{exp.description}</p>
-                  <div className={`flex flex-wrap gap-2 ${left ? "md:justify-end" : ""}`}>
+                  <ul className="mb-4 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                    {exp.highlights.map((point, i) => (
+                      <li key={i} className="flex gap-2.5">
+                        <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500/70 dark:bg-cyan-400/70" />
+                        <span className="min-w-0 flex-1">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="rounded-full border border-purple-300/70 bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 transition-colors hover:bg-purple-200 dark:border-purple-500/30 dark:bg-purple-500/10 dark:text-purple-200 dark:hover:bg-purple-500/20"
+                        className="max-w-full rounded-full border border-purple-300/70 bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 transition-colors hover:bg-purple-200 dark:border-purple-500/30 dark:bg-purple-500/10 dark:text-purple-200 dark:hover:bg-purple-500/20"
                       >
                         {tech}
                       </span>

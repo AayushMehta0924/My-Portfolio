@@ -42,7 +42,7 @@ const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
       "  projects     project highlights",
       "  contact      how to reach me",
       "  social       links",
-      "  resume       download Aayush_Resume.pdf",
+      "  resume       download AayushMehta_Resume.pdf",
       "  piano        my piano channel",
       "  fun-facts    things you didn't ask for",
       "  motto        words to live by",
@@ -59,29 +59,31 @@ const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
     whoami: () => [
       "aayush mehta — data + ai engineer",
       "based in frisco, tx · building on google cloud",
-      "currently shipping: customer 360, vertex ai agents, sap → bigquery",
+      "currently shipping: airflow etl framework, multi-agent ai, sap → bigquery",
     ],
     age: () => [`${calcAge()} years young.`],
     ls: () => [SECTIONS.map((s) => s + "/").join("  ")],
     skills: () => [
-      "  python · sql · airflow · dbt · bigquery",
-      "  vertex ai · google adk · looker · kafka",
-      "  docker · kubernetes · postgres · mongo",
+      "  python · sql · shell · javascript",
+      "  gcp · bigquery · composer · aws · azure · snowflake",
+      "  airflow · dbt · kafka · vertex ai · google adk · mcp",
+      "  looker · power bi · tableau · docker · git/gitlab",
     ],
     experience: () => [
-      "  jan 2026 – now    bi engineer          itdatabuild",
-      "  may 2025 – dec 25 data / ai engineer   sabre",
-      "  sept 2022 – jun 23 data / ai engineer   analytics it",
-      "  nov 2021 – nov 22 head of finance       youth india foundation",
-      "  nov 2021 – dec 21 web developer         twowaits",
-      "  may 2021 – aug 21 data engineer         nividata",
-      "  may 2020 – dec 20 data analyst          bosky buildcon",
+      "  jan 2026 – now     data / ai engineer   bayer",
+      "  may 2025 – dec 25  data / ai engineer   sabre",
+      "  jan 2023 – apr 23  bi platform intern   uiuc",
+      "  sept 2022 – dec 22 data analyst         bosky buildcon",
+      "  nov 2021 – nov 22  head of finance      youth india foundation",
+      "  nov 2021 – dec 21  web developer        twowaits",
     ],
     education: () => [
-      "  m.s. computer science — arizona state university (3.73/4)  ★ namu scholarship",
-      "  b.tech cse           — s.r.m. university, chennai (9.38/10)",
+      "  m.s. computer science — arizona state university (3.73/4.0)  ★ namu scholarship",
+      "  b.s. computer science — s.r.m. university, chennai (3.75/4.0)",
     ],
     projects: () => [
+      "  zomato ai pipeline  s3 → snowflake → dbt → airflow · 10m+ orders",
+      "  youtube trending    serverless aws etl · bronze/silver/gold",
       "  streamlens          real-time video processing on kafka + resnet50",
       "  fraudulent merchant xgboost fraud-detection w/ class imbalance handling",
       "  navagraha classifier 9-class deity sculpture cnn (91% accuracy, published)",
@@ -99,8 +101,8 @@ const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
       "piano     youtube.com/@2symphonians197",
     ],
     resume: () => {
-      if (typeof window !== "undefined") window.open("/resume/Aayush_Resume.pdf", "_blank");
-      return ["opening Aayush_Resume.pdf …"];
+      if (typeof window !== "undefined") window.open("/resume/AayushMehta_Resume.pdf", "_blank");
+      return ["opening AayushMehta_Resume.pdf …"];
     },
     piano: () => {
       if (typeof window !== "undefined") window.open(PIANO_URL, "_blank");

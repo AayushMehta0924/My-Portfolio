@@ -60,7 +60,7 @@ const Navbar = () => {
             <Logo className="h-10 w-10 animate-spin-slow group-hover:animate-spin-fast" />
           </a>
           <a
-            href="/resume/Aayush_Resume.pdf"
+            href="/resume/AayushMehta_Resume.pdf"
             download="Aayush_Mehta_Resume.pdf"
             aria-label="Download résumé (PDF)"
             className="pointer-events-none absolute left-12 top-1/2 inline-flex -translate-x-2 -translate-y-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-neutral-300 bg-white/85 px-3 py-1.5 text-xs font-medium text-neutral-700 opacity-0 shadow-md backdrop-blur transition-all duration-300 ease-out-expo hover:border-cyan-500/60 hover:text-cyan-700 group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100 dark:border-neutral-700/70 dark:bg-neutral-900/85 dark:text-neutral-200 dark:hover:border-cyan-400/60 dark:hover:text-cyan-300"
@@ -134,7 +134,7 @@ const Navbar = () => {
                 <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
                 <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><FaSquareXTwitter /></a>
                 <a
-                  href="/resume/Aayush_Resume.pdf"
+                  href="/resume/AayushMehta_Resume.pdf"
                   download="Aayush_Mehta_Resume.pdf"
                   aria-label="Download résumé"
                   className="ml-auto inline-flex items-center gap-1 rounded-full border border-neutral-300 px-2.5 py-1 text-xs text-neutral-700 dark:border-neutral-700 dark:text-neutral-200"
