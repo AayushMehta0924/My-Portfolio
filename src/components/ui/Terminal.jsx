@@ -26,6 +26,11 @@ const JOKES = [
   "A SQL query walks into a bar, walks up to two tables and asks: 'mind if I JOIN you?'",
   "Why was the function sad after a successful first date? It never got called back.",
   "There's no place like 127.0.0.1.",
+  "Why do programmers prefer dark mode? Because light attracts bugs.",
+  "I'd tell you a UDP joke, but you might not get it.",
+  "Why was the JavaScript developer sad? Because he didn't Node how to Express himself.",
+  "Why did the developer go broke? Because he used up all his cache.",
+  "I told my data pipeline a joke, but it only laughed once. It's idempotent.",
 ];
 
 const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
@@ -86,7 +91,7 @@ const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
       "  youtube trending    serverless aws etl · bronze/silver/gold",
       "  streamlens          real-time video processing on kafka + resnet50",
       "  fraudulent merchant xgboost fraud-detection w/ class imbalance handling",
-      "  navagraha classifier 9-class deity sculpture cnn (91% accuracy, published)",
+      "  navagraha classifier 9-class deity sculpture cnn (93.75% accuracy, published)",
       "  movie hub           mern app with jwt auth + omdb integration",
       "type 'cd projects' to see them.",
     ],
@@ -109,11 +114,13 @@ const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
       return ["opening 2symphonians on youtube …", "(piano covers + originals)"];
     },
     "fun-facts": () => [
-      "• ex head of finance at youth india foundation",
-      "• trilingual: english, hindi, gujarati",
+      "• crowned student of the year, 2016",
+      "• music director for a 45-min school drama",
+      "• trilingual, chasing a fourth: spanish",
       "• plays piano · publishes covers as @2symphonians",
       "• co-authored a published paper on temple sculpture cnns",
-      "• coffee > tea, but barely",
+      "• rubik's cube pb: 55s (yes, i timed it)",
+      "• types at 82 wpm, so bugs ship faster too",
     ],
     funfacts: () => cmds["fun-facts"](),
     motto: () => [`"Hardware eventually fails. Software eventually works."`],
@@ -121,6 +128,7 @@ const buildCommands = ({ setTheme, setSound, getTheme, getSound, onClose }) => {
       "→ migrating sap hana calc views → bigquery (airflow)",
       "→ exploring multi-agent orchestration patterns",
       "→ tinkering with llm evals & guardrails",
+      "→ learning supply chain on the side",
     ],
     joke: () => [JOKES[Math.floor(Math.random() * JOKES.length)]],
     date: () => [new Date().toString()],
